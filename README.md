@@ -26,7 +26,7 @@ Share on Twitter: If you like a quote and want to share it on Twitter, click the
 
 Contributions are welcome!
 
-Acknowledgements
-Inspiration from various quote APIs and libraries.
+## Acknowledgements
+ Inspiration from various quote APIs and libraries.
 
 
