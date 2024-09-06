@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quotegenrator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body> <div class="outerlopp">
+   <div class="quotebox">
+    <h2> Quote of the Day</h2>
+    <blockquote id="quote"> Loading...</blockquote>
+    <span id="author"> Loading...</span>
+    <div> <button onclick="getquote(api_url)"> New Quote</button>
+        <button onclick="tweet()"> <img src="icons8-twitter-50.png"> Tweet</button></div>
+   </div> 
+</div>
+<script>
+    const api_url= "https://api.quotable.io/random";
+    const quotePut=document.getElementById("quote");
+    const authorname=document.getElementById("author");
+    const changeQuote=document.getElementById("clickOn") 
+    async function getquote(urrl) {
+        const response = await fetch(urrl);
+        var data = await response.json();
+        quotePut.innerHTML=data.content;
+        authorname.innerHTML=data.author
+
+        console.log(data);
+    }
+
+
+     getquote(api_url);
+    async function  tweet(){
+        window.open("https://twitter.com/intent/tweet?text=Hello%20world","TweetWindow","Width=600,height=300");
+    }//a new window with heitgh and name as given
+</script>
+</body>
+</html>
